@@ -25,8 +25,8 @@ export const ProjectsSection: React.FC = () => {
       image: '/pomodoro.png',
       category: 'Web Development',
       technologies: ['ReactJS', 'CSS', 'React-Router', 'Typescript'],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/vieira-klgwn/TaskSync-V2.git',
+      liveUrl: 'https://chronos-pomodoro-react.vercel.app/',
+      githubUrl: 'https://github.com/IgorJFS/Chronos-Pomodoro-React',
     },
     {
       id: 2,
@@ -36,8 +36,8 @@ export const ProjectsSection: React.FC = () => {
       image: '/discordbot.png',
       category: 'Web Development',
       technologies: ['NodeJS', 'Express', 'TypeScript', 'discord.js', 'API'],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/vieira-klgwn/dapp-commence.git',
+      liveUrl: '#https://github.com/IgorJFS/discord-DevPosting-bot',
+      githubUrl: 'https://github.com/IgorJFS/discord-DevPosting-bot',
     },
     {
       id: 3,
@@ -47,9 +47,8 @@ export const ProjectsSection: React.FC = () => {
       image: '/devHouse.png',
       category: 'Web Development',
       technologies: ['HTML', 'CSS', 'Tailwind', 'Typescript'],
-      liveUrl: '#',
-      githubUrl:
-        'https://github.com/vieira-klgwn/Embedded-Sysetms-Web-Based-Light-Scheduler.git',
+      liveUrl: 'https://igorjfs.github.io/DevHouse/',
+      githubUrl: 'https://github.com/IgorJFS/DevHouse',
     },
     {
       id: 4,
@@ -59,42 +58,31 @@ export const ProjectsSection: React.FC = () => {
       image: '/uber.png',
       category: 'Web Development',
       technologies: ['HTML', 'CSS', 'Tailwind', 'Typescript'],
-      liveUrl: '#',
-      githubUrl:
-        'https://github.com/vieira-klgwn/Springboot-HospitalManagementSystem.git',
+      liveUrl: 'https://igorjfs.github.io/Uber-Layout/',
+      githubUrl: 'https://github.com/IgorJFS/Uber-Layout',
     },
     {
       id: 5,
-      title: 'Simple Login Page Tailwind',
+      title: 'Typescript examples to Grokking Algorithms',
       description:
-        'A simple and modern login page built with Tailwind CSS. Fully responsive with a clean design, using utility classes for layout, forms, and styling.',
-      image: '/login.png',
-      category: 'Web Development',
-      technologies: ['HTML', 'CSS', 'Tailwind', 'JavaScript'],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/vieira-klgwn/GonXKillua-Pygame-Game.git',
+        'Contributed TypeScript examples for various algorithms and data structures to the famous Grokking Algorithms book repository.',
+      image: '/Grokking.png',
+      category: 'Open Source',
+      technologies: ['GitHub', 'TypeScript'],
+      liveUrl: 'https://github.com/egonSchiele/grokking_algorithms',
+      githubUrl:
+        'https://github.com/egonSchiele/grokking_algorithms/pull/311#issuecomment-2845981911',
     },
     {
       id: 6,
-      title: 'Modern Digital Clock JavaScript',
-      description:
-        'A digital clock built with JavaScript that displays the current time and updates every second.',
-      image: '/modernClock.png',
-      category: 'Web Development',
-      technologies: ['HTML', 'CSS', 'SASS', 'JavaScript'],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/vieira-klgwn/my_project.git',
-    },
-    {
-      id: 7,
       title: 'Data Analysis Dashboard',
       description:
         'Interactive dashboard analyzing global salaries across multiple roles in the data industry from 2020 to 2025. Built with Python, Streamlit, and Plotly for dynamic filtering and visualization.',
       image: '/data-dashboard.png',
       category: 'Data Analysis',
       technologies: ['Python', 'Pandas', 'Streamlit', 'Matplotlib'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://data-salary-dashboard.streamlit.app/',
+      githubUrl: 'https://github.com/IgorJFS/Data-Salary-Dashboard',
     },
     {
       id: 8,
@@ -104,8 +92,8 @@ export const ProjectsSection: React.FC = () => {
       image: '/tindog.png',
       category: 'Web Development',
       technologies: ['HTML', 'CSS', 'Tailwind', 'JavaScript'],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/vieira-klgwn/GonXKillua-Pygame-Game.git',
+      liveUrl: 'https://igorjfs.github.io/Bootstrap-Tindog-Layout/',
+      githubUrl: 'https://github.com/IgorJFS/Bootstrap-Tindog-Layout',
     },
     {
       id: 9,
@@ -123,12 +111,35 @@ export const ProjectsSection: React.FC = () => {
         'MongoDB',
         'API',
       ],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/vieira-klgwn/dapp-commence.git',
+      liveUrl: '#https://github.com/IgorJFS/YelpCamp-Project',
+      githubUrl: 'https://github.com/IgorJFS/YelpCamp-Project',
+    },
+    {
+      id: 11,
+      title: 'Portuguese and Spanish Translation for HeyPuter',
+      description:
+        'Translated the README files for the HeyPuter project into Portuguese and Spanish, ensuring clear communication for a broader audience.',
+      image: '/puter.png',
+      category: 'Open Source',
+      technologies: ['Markdown', 'Docs', 'GitHub'],
+      liveUrl: 'https://github.com/HeyPuter/puter',
+      githubUrl:
+        'https://github.com/HeyPuter/puter/pull/1363#event-18692314220',
+    },
+    {
+      id: 12,
+      title: 'Bug Fixes for Sera UI React Library',
+      description:
+        'Identified and resolved various bugs within the Sera UI React library, improving overall usability.',
+      image: '/sera.png',
+      category: 'Open Source',
+      technologies: ['Markdown', 'Docs', 'GitHub'],
+      liveUrl: 'https://seraui.seraprogrammer.com/',
+      githubUrl: 'https://github.com/seraui/seraui/pull/14#event-19064453564',
     },
   ];
 
-  const categories = ['All', 'Web Development', 'Data Analysis'];
+  const categories = ['All', 'Web Development', 'Data Analysis', 'Open Source'];
 
   const filteredProjects =
     activeCategory === 'All'
@@ -136,15 +147,16 @@ export const ProjectsSection: React.FC = () => {
       : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id='projects' className='py-24 relative overflow-hidden px-6'>
+    <section id='projects' className='py-10 relative overflow-hidden px-6'>
       <div className='container mx-auto'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold mb-4 opacity-0 animate-fade-in animate-delay-100'>
             Featured <span className='text-primary'>Work</span>
           </h2>
           <p className='text-secondary-foreground max-w-2xl mx-auto opacity-0 animate-fade-in animate-delay-200'>
-            Here are some of my recent projects. Each project was carefully
-            crafted with attention to detail, performance, and user experience.
+            Here are some of my recent projects and Open-Source contributions.
+            Each project was carefully crafted with attention to detail,
+            performance, and user experience.
           </p>
         </div>
 
@@ -186,7 +198,7 @@ export const ProjectsSection: React.FC = () => {
                   <h3 className='text-xl font-semibold align-middle'>
                     {project.title}
                   </h3>
-                  <span className='px-2 py-1 text-xs rounded-full bg-primary/20 text-tech-light-blue'>
+                  <span className='px-2 py-1 text-xs rounded-full bg-primary/10'>
                     {project.category}
                   </span>
                 </div>
@@ -195,7 +207,7 @@ export const ProjectsSection: React.FC = () => {
                   {project.technologies.map(tech => (
                     <span
                       key={tech}
-                      className='px-2 py-1 bg-primary/20 rounded-md text-xs text-secondary-foreground'
+                      className='px-2 py-1 bg-primary/20 rounded-md text-xs '
                     >
                       {tech}
                     </span>
@@ -231,7 +243,12 @@ export const ProjectsSection: React.FC = () => {
         </div>
 
         <div className='mt-12 text-center opacity-0 animate-fade-in animate-delay-1000'>
-          <a href='#' className='cosmic-button inline-flex items-center'>
+          <a
+            href='https://github.com/IgorJFS'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='cosmic-button inline-flex items-center'
+          >
             Check My GitHub <ArrowRight className='ml-2 h-5 w-5' />
           </a>
         </div>

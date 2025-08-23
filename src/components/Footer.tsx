@@ -17,15 +17,15 @@ export const Footer: React.FC = () => {
               Igor Moraes Pereira
             </a>
             <p className='mt-2 text-secondary-foreground max-w-md'>
-              A passionate full-stack developer building innovative digital
-              solutions with a focus on performance and security.
+              A passionate Web developer building innovative digital solutions
+              with a focus on performance and security.
             </p>
           </div>
 
           <div className='flex flex-col items-end'>
             <div className='flex space-x-4'>
               <a
-                href='https://github.com/vieira-klgwn'
+                href='https://github.com/IgorJFS'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='p-2 rounded-full bg-tech-dark/70 hover:bg-primary/50 text-secondary-foreground hover:text-tech-light-blue transition-all'
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
                 <Github size={20} />
               </a>
               <a
-                href='https://www.linkedin.com/in/ntwali-isimbi-vieira-2b1213302/'
+                href='https://www.linkedin.com/in/igor-moraes/'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='p-2 rounded-full bg-tech-dark/70 hover:bg-primary/50 text-secondary-foreground hover:text-tech-light-blue transition-all'
@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
                 <Linkedin size={20} />
               </a>
               <a
-                href='mailto:ntwaliisimbivieira@gmail.com'
+                href='mailto:igormp.dev@gmail.com'
                 className='p-2 rounded-full hover:bg-primary/50 transition-all'
                 aria-label='Email'
               >

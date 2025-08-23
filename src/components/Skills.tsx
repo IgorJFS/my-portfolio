@@ -1,86 +1,119 @@
-import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import React, { useState, useRef } from 'react';
+import { useInView } from 'react-intersection-observer';
 
-const skills = [
-  // Frontend
-  { name: 'HTML/CSS', level: 95, category: 'frontend' },
-  { name: 'JavaScript', level: 90, category: 'frontend' },
-  { name: 'React', level: 90, category: 'frontend' },
-  { name: 'Next.js', level: 80, category: 'frontend' },
-  { name: 'TypeScript', level: 85, category: 'frontend' },
-  { name: 'Tailwind CSS', level: 90, category: 'frontend' },
+interface Skill {
+  name: string;
+  level: number;
+  category: 'languages' | 'frameworks' | 'databases' | 'tools';
+  icon?: React.ReactNode;
+}
 
-  // Backend
-  { name: 'Node.js', level: 80, category: 'backend' },
-  { name: 'Express', level: 75, category: 'backend' },
-  { name: 'Python', level: 80, category: 'backend' },
-  { name: 'MongoDB', level: 85, category: 'backend' },
-  { name: 'PostgreSQL', level: 80, category: 'backend' },
-  { name: 'MySQL', level: 85, category: 'backend' },
-  { name: 'GraphQL', level: 60, category: 'backend' },
+export const SkillsSection: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] =
+    useState<string>('frameworks');
+  const progressRef = useRef<HTMLDivElement>(null);
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
-  // Tools
-  { name: 'Git/GitHub', level: 95, category: 'tools' },
-  { name: 'Docker', level: 70, category: 'tools' },
-  { name: 'Google Cloud', level: 70, category: 'tools' },
-  { name: 'VS Code', level: 100, category: 'tools' },
-];
+  const skills: Skill[] = [
+    { name: 'HTML/CSS', level: 95, category: 'languages' },
+    { name: 'JavaScript', level: 95, category: 'languages' },
+    { name: 'TypeScript', level: 90, category: 'languages' },
+    { name: 'Python', level: 75, category: 'languages' },
 
-const categories = ['all', 'frontend', 'backend', 'tools'];
+    { name: 'React', level: 90, category: 'frameworks' },
+    { name: 'Next.js', level: 85, category: 'frameworks' },
+    { name: 'Node.js', level: 90, category: 'frameworks' },
+    { name: 'Express', level: 85, category: 'frameworks' },
+    { name: 'Mongoose', level: 80, category: 'frameworks' },
+    { name: 'Tailwind CSS', level: 95, category: 'frameworks' },
+    { name: 'Bootstrap', level: 90, category: 'frameworks' },
+    { name: 'Pandas', level: 80, category: 'frameworks' },
 
-export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+    { name: 'MySQL', level: 85, category: 'databases' },
+    { name: 'PostgreSQL', level: 80, category: 'databases' },
+    { name: 'MongoDB', level: 90, category: 'databases' },
+
+    { name: 'VS Code', level: 100, category: 'tools' },
+    { name: 'Git/GitHub', level: 95, category: 'tools' },
+    { name: 'RESTful API', level: 90, category: 'tools' },
+    { name: 'Docker', level: 75, category: 'tools' },
+    { name: 'Google Cloud', level: 60, category: 'tools' },
+    { name: 'Figma', level: 55, category: 'tools' },
+  ];
+
+  const categories = [
+    { id: 'languages', name: 'Languages' },
+    { id: 'frameworks', name: 'Frameworks' },
+    { id: 'databases', name: 'Databases' },
+    { id: 'tools', name: 'Tools & Others' },
+  ];
 
   const filteredSkills = skills.filter(
-    skill => activeCategory === 'all' || skill.category === activeCategory,
+    skill => skill.category === selectedCategory,
   );
-  return (
-    <section id='skills' className='py-24 px-4 relative bg-secondary/30'>
-      <div className='container mx-auto max-w-5xl'>
-        <h2 className='text-3xl md:text-4xl font-bold mb-12 text-center'>
-          My <span className='text-primary'> Skills</span>
-        </h2>
 
-        <div className='flex flex-wrap justify-center gap-4 mb-12'>
-          {categories.map((category, key) => (
-            <button
-              key={key}
-              onClick={() => setActiveCategory(category)}
-              className={cn(
-                'px-5 py-2 rounded-full transition-colors duration-300 capitalize',
-                activeCategory === category
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-secondary/70 text-forefround hover:bd-secondary',
-              )}
-            >
-              {category}
-            </button>
-          ))}
+  return (
+    <section
+      id='skills'
+      className='py-10 relative overflow-hidden px-6 bg-tech-dark/50'
+    >
+      <div className='container mx-auto'>
+        <div className='text-center mb-16'>
+          <h2 className='text-4xl font-bold mb-4 opacity-0 animate-fade-in animate-delay-100'>
+            My <span className='text-primary'>Projects</span>
+          </h2>
+          <p className='text-secondary-foreground max-w-2xl mx-auto opacity-0 animate-fade-in animate-delay-200'>
+            I've developed a diverse skill set across programming languages,
+            frameworks, databases, and creative tools. Here's a snapshot of my
+            technical capabilities.
+          </p>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-          {filteredSkills.map((skill, key) => (
-            <div
-              key={key}
-              className='bg-card p-6 rounded-lg shadow-xs card-hover'
-            >
-              <div className='text-left mb-4'>
-                <h3 className='font-semibold text-lg'> {skill.name}</h3>
-              </div>
-              <div className='w-full bg-secondary/50 h-2 rounded-full overflow-hidden'>
-                <div
-                  className='bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]'
-                  style={{ width: skill.level + '%' }}
-                />
-              </div>
+        <div className='mb-12'>
+          <div className='flex flex-wrap justify-center gap-3 mb-12'>
+            {categories.map(category => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-5 py-2 rounded-full transition-all duration-300 ${
+                  selectedCategory === category.id
+                    ? 'bg-primary text-white shadow-lg shadow-primary/20'
+                    : 'bg-tech-dark/50 text-secondary-foreground hover:bg-tech-dark/80'
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
 
-              <div className='text-right mt-1'>
-                <span className='text-sm text-muted-foreground'>
-                  {skill.level}%
-                </span>
+          <div ref={ref} className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            {filteredSkills.map((skill, index) => (
+              <div
+                key={skill.name}
+                className='tech-card group opacity-0 animate-fade-in'
+                style={{ animationDelay: `${300 + index * 100}ms` }}
+              >
+                <div className='flex justify-between items-center mb-2'>
+                  <h3 className='font-medium'>{skill.name}</h3>
+                  <span className='text-primary-gradient font-semibold'>
+                    {skill.level}%
+                  </span>
+                </div>
+                <div className='skill-progress'>
+                  <div
+                    ref={progressRef}
+                    className='skill-progress-bar'
+                    style={{
+                      width: inView ? `${skill.level}%` : '0%',
+                    }}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

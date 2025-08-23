@@ -69,8 +69,9 @@
 
     --card: 0 0% 100%;
 
-    --primary: 250 47% 60%;
+    --primary: 150 100% 50%;
     --primary-foreground: 210 40% 98%;
+    --secondary: 200 90% 50%;
 
     --border: 214 32% 91%;
   }
@@ -81,7 +82,8 @@
 
     --card: 222 47% 8%;
 
-    --primary: 250 65% 65%;
+    --primary: 150 100% 50%;
+    --secondary: 200 90% 50%;
     --primary-foreground: 213 31% 91%;
 
     --border: 217 33% 20%;
@@ -160,6 +162,32 @@
 }
 @utility tech-card {
   @apply glass-card p-6 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,163,255,0.3)];
+}
+@utility bg-primary-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+  color: var(--primary-foreground); /* garante contraste */
+}
+@utility text-primary-gradient {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--secondary))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* fallback */
+  color: transparent; /* fallback */
+}
+@utility skill-progress {
+  @apply h-2 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden relative;
+}
+
+@utility skill-progress-bar {
+  @apply h-full absolute top-0 left-0 rounded-full bg-primary-gradient transition-all duration-1000;
 }
 
 #root {

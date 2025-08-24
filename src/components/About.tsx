@@ -9,12 +9,14 @@ export const AboutSection = () => {
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
           <div className='space-y-6'>
-            <h3 className='text-2xl font-semibold'>Passionate Web Developer</h3>
+            <h3 className='text-2xl font-semibold'>
+              Driven Software Developer
+            </h3>
             <p className='text-muted-foreground'>
-              I am a passionate web developer with experience in building modern
-              web applications. My journey in web development started with a
-              curiosity to understand how games and websites work, and it has
-              evolved into a full-fledged career.
+              I am a committed Software developer with experience in building
+              modern web applications. My journey in web development started
+              with a curiosity to understand how games and websites work, and it
+              has evolved into a full-fledged career.
             </p>
             <p className='text-muted-foreground'>
               I specialize in full-stack development, working with technologies
@@ -29,9 +31,8 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
               <a
-                href='/Igor_Moraes_Resume.pdf'
-                target='_blank'
-                rel='noopener noreferrer'
+                href='/IgorCV-FS.pdf'
+                download
                 className='rounded-full px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-background transition-colors text-center'
               >
                 Download Resume

@@ -20,7 +20,7 @@ export const HeroSection = () => {
             </span>
           </h1>
           <p className='text-lg md:text-xl text-foreground opacity-0 mx-auto animate-fade-in-delay-3'>
-            A passionate web developer that creates beautiful and functional
+            A motivated Software developer that creates beautiful and functional
             websites. Specializing in full-stack web development, I build
             responsive and performant web applications.
           </p>

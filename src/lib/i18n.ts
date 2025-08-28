@@ -46,9 +46,8 @@ const resources = {
               'Contributing to open-source projects and collaborating with other developers',
           },
           projectMgmt: {
-            title: 'Project Management',
-            description:
-              'Leading projects from conception to completion with agile methodologies.',
+            title: 'UI/UX Design',
+            description: 'Creating intuitive digital experiences.',
           },
         },
       },
@@ -224,9 +223,8 @@ const resources = {
               'Contribuindo para projetos open-source e colaborando com outros desenvolvedores',
           },
           projectMgmt: {
-            title: 'Gestão de Projetos',
-            description:
-              'Liderando projetos desde a concepção até a conclusão com metodologias ágeis.',
+            title: 'UI/UX Design',
+            description: 'Criando experiências digitais intuitivas.',
           },
         },
       },
@@ -273,7 +271,7 @@ const resources = {
               'Um projeto de sistema embarcado que integra dispositivos IoT com foco em segurança. Seu principal objetivo é permitir que os usuários controlem luzes remotamente',
           },
           uberLayout: {
-            title: 'Layout do Site Uber Tailwind',
+            title: 'Layout Tailwind do Site Uber',
             description:
               'Um layout similar ao Uber usando Tailwind CSS e Javascript. O layout inclui um cabeçalho, seção de blog, área de conteúdo principal, seção CTA e um rodapé. Tudo com design responsivo em mente. (Abordagem mobile-first)',
           },
@@ -283,7 +281,7 @@ const resources = {
               'Contribuí com exemplos em TypeScript para vários algoritmos e estruturas de dados para o repositório do famoso livro Entendendo Algoritmos.',
           },
           dataDashboard: {
-            title: 'Dashboard de Análise de Dados',
+            title: 'Dashboard de Análise de Salários',
             description:
               'Dashboard interativo analisando salários globais em múltiplas funções na indústria de dados de 2020 a 2025. Construído com Python, Streamlit e Plotly para filtragem dinâmica e visualização.',
           },
@@ -293,13 +291,12 @@ const resources = {
               'Um pequeno projeto simulando um app estilo Tinder para cães, construído com Bootstrap 5.0. Totalmente responsivo para mobile, usa o sistema de grid e componentes do Bootstrap para exibir perfis de cães em uma interface divertida e limpa.',
           },
           yelpcamp: {
-            title:
-              'Projeto Full-Stack YelpCamp (Projeto ainda em desenvolvimento)',
+            title: 'Projeto Full-Stack YelpCamp (Em desenvolvimento)',
             description:
               'Uma aplicação web full-stack abrangente que permite aos usuários criar, visualizar e avaliar campings. Construída com Node.js, Express, TypeScript, templating EJS, Bootstrap para estilização e MongoDB para armazenamento de dados. Recursos incluem autenticação de usuário, operações CRUD para campings e avaliações, e design responsivo.',
           },
           heyputer: {
-            title: 'Tradução Português e Espanhol para HeyPuter',
+            title: 'Tradução Português e Espanhol para o HeyPuter',
             description:
               'Traduzi os arquivos README do projeto HeyPuter para português e espanhol, garantindo comunicação clara para um público mais amplo.',
           },

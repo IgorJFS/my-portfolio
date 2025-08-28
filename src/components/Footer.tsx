@@ -1,24 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowUp, Linkedin, Github, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export const Footer: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const [forceRender, setForceRender] = useState(0);
+
+  // Force re-render when language changes
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      setForceRender(prev => prev + 1);
+    };
+
+    i18n.on('languageChanged', handleLanguageChange);
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+    };
+  }, [i18n]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const navItems = [
+    { name: t('nav.home'), href: '#hero' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.skills'), href: '#skills' },
+    { name: t('nav.projects'), href: '#projects' },
+    { name: t('nav.contact'), href: '#contact' },
+  ];
+
   return (
-    <footer className='relative py-12 bg-tech-dark border-t border-tech-dark/50 text-foreground'>
+    <footer
+      className='relative py-12 bg-tech-dark border-t border-tech-dark/50 text-foreground'
+      key={forceRender}
+    >
       <div className='container mx-auto px-6'>
         <div className='flex flex-col md:flex-row justify-between items-center mb-8'>
           <div className='mb-6 md:mb-0 text-start'>
             <a href='#' className='text-3xl font-bold text-primary'>
-              Igor Moraes Pereira
+              {t('footer.name')}
             </a>
             <p className='mt-2 text-secondary-foreground max-w-md'>
-              A passionate Web developer building innovative digital solutions
-              with a focus on performance and security.
+              {t('footer.description')}
             </p>
           </div>
 
@@ -55,23 +80,23 @@ export const Footer: React.FC = () => {
 
         <div className='pt-8 border-t border-tech-dark/50 flex flex-col md:flex-row justify-between items-center'>
           <p className='text-secondary-foreground text-sm'>
-            &copy; {currentYear} IgorJFS. All rights reserved.
+            &copy; {currentYear} IgorJFS. {t('footer.copyright')}
           </p>
 
           <div className='mt-4 md:mt-0 flex flex-wrap gap-4'>
-            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map(item => (
+            {navItems.map(item => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
+                key={item.name}
+                href={item.href}
                 className='text-sm hover:text-primary transition-colors'
               >
-                {item}
+                {item.name}
               </a>
             ))}
             <button
               onClick={scrollToTop}
               className='p-3 rounded-full bg-primary/20 text-primary hover:bg-primary/50 transition-all mb-6'
-              aria-label='Scroll to top'
+              aria-label={t('footer.scrollToTop')}
             >
               <ArrowUp size={20} />
             </button>

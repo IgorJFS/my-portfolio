@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface Project {
   id: number;
@@ -13,15 +14,35 @@ interface Project {
 }
 
 export const ProjectsSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
+  const { t, i18n } = useTranslation();
+  const [activeCategory, setActiveCategory] = useState('');
   const ref = useRef<HTMLDivElement>(null);
+  const [forceRender, setForceRender] = useState(0);
+
+  // Initialize activeCategory after translations are loaded
+  React.useEffect(() => {
+    if (activeCategory === '') {
+      setActiveCategory(t('projects.categories.all'));
+    }
+  }, [t, activeCategory]);
+
+  // Force re-render when language changes
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      setForceRender(prev => prev + 1);
+    };
+
+    i18n.on('languageChanged', handleLanguageChange);
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+    };
+  }, [i18n]);
 
   const projects: Project[] = [
     {
       id: 1,
-      title: 'Chronos Pomodoro React',
-      description:
-        'A modern Pomodoro timer built with React + TypeScript + Vite. Focus cycles, short/long breaks, task history, theming and mobile responsive design.',
+      title: t('projects.items.pomodoro.title'),
+      description: t('projects.items.pomodoro.description'),
       image: '/pomodoro.png',
       category: 'Web Development',
       technologies: ['ReactJS', 'CSS', 'React-Router', 'Typescript'],
@@ -30,9 +51,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Discord-DevPosting bot Typescript',
-      description:
-        'A robust, modular Discord bot for fetching and posting IT/developer job listings from remoteOk API, with features for error reporting, message cleanup, scheduling, and slash command management.',
+      title: t('projects.items.discordBot.title'),
+      description: t('projects.items.discordBot.description'),
       image: '/discordbot.png',
       category: 'Web Development',
       technologies: ['NodeJS', 'Express', 'TypeScript', 'discord.js', 'API'],
@@ -41,9 +61,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 3,
-      title: 'Tailwind Responsive DevHouse',
-      description:
-        'An embedded system project that integrates IoT devices with a focus on security. Its main purpose is to allow users to control lights remotely',
+      title: t('projects.items.devHouse.title'),
+      description: t('projects.items.devHouse.description'),
       image: '/devHouse.png',
       category: 'Web Development',
       technologies: ['HTML', 'CSS', 'Tailwind', 'Typescript'],
@@ -52,9 +71,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 4,
-      title: 'Uber Website Layout Tailwind',
-      description:
-        'An Uber-like layout using Tailwind CSS and Javascript. The layout includes a header, a blog section, main content area, CTA section, and a footer. All with responsive design in mind. (Mobile-first approach)',
+      title: t('projects.items.uberLayout.title'),
+      description: t('projects.items.uberLayout.description'),
       image: '/uber.png',
       category: 'Web Development',
       technologies: ['HTML', 'CSS', 'Tailwind', 'Typescript'],
@@ -63,9 +81,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 5,
-      title: 'Typescript examples to Grokking Algorithms',
-      description:
-        'Contributed TypeScript examples for various algorithms and data structures to the famous Grokking Algorithms book repository.',
+      title: t('projects.items.grokkingAlgorithms.title'),
+      description: t('projects.items.grokkingAlgorithms.description'),
       image: '/Grokking.png',
       category: 'Open Source',
       technologies: ['GitHub', 'TypeScript'],
@@ -75,9 +92,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 6,
-      title: 'Data Analysis Dashboard',
-      description:
-        'Interactive dashboard analyzing global salaries across multiple roles in the data industry from 2020 to 2025. Built with Python, Streamlit, and Plotly for dynamic filtering and visualization.',
+      title: t('projects.items.dataDashboard.title'),
+      description: t('projects.items.dataDashboard.description'),
       image: '/data-dashboard.png',
       category: 'Data Analysis',
       technologies: ['Python', 'Pandas', 'Streamlit', 'Matplotlib'],
@@ -86,9 +102,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 8,
-      title: 'Bootstrap-Tindog-Layout',
-      description:
-        'A small project simulating a Tinder-style app for dogs, built with Bootstrap 5.0. Fully mobile-responsive, it uses Bootstrap’s grid system and components to display dog profiles in a playful and clean interface.',
+      title: t('projects.items.tindog.title'),
+      description: t('projects.items.tindog.description'),
       image: '/tindog.png',
       category: 'Web Development',
       technologies: ['HTML', 'CSS', 'Tailwind', 'JavaScript'],
@@ -97,9 +112,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 9,
-      title: 'Full-Stack YelpCamp Project (Project still under dev)',
-      description:
-        'A comprehensive full-stack web application that allows users to create, view, and review campgrounds. Built with Node.js, Express, TypeScript, EJS templating, Bootstrap for styling, and MongoDB for data storage. Features user authentication, CRUD operations for campgrounds and reviews, and a responsive design.',
+      title: t('projects.items.yelpcamp.title'),
+      description: t('projects.items.yelpcamp.description'),
       image: '/yelpcamp.png',
       category: 'Web Development',
       technologies: [
@@ -116,9 +130,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 11,
-      title: 'Portuguese and Spanish Translation for HeyPuter',
-      description:
-        'Translated the README files for the HeyPuter project into Portuguese and Spanish, ensuring clear communication for a broader audience.',
+      title: t('projects.items.heyputer.title'),
+      description: t('projects.items.heyputer.description'),
       image: '/puter.png',
       category: 'Open Source',
       technologies: ['Markdown', 'Docs', 'GitHub'],
@@ -128,9 +141,8 @@ export const ProjectsSection: React.FC = () => {
     },
     {
       id: 12,
-      title: 'Bug Fixes for Sera UI React Library',
-      description:
-        'Identified and resolved various bugs within the Sera UI React library, improving overall usability.',
+      title: t('projects.items.seraui.title'),
+      description: t('projects.items.seraui.description'),
       image: '/sera.png',
       category: 'Open Source',
       technologies: ['Markdown', 'Docs', 'GitHub'],
@@ -139,24 +151,39 @@ export const ProjectsSection: React.FC = () => {
     },
   ];
 
-  const categories = ['All', 'Web Development', 'Data Analysis', 'Open Source'];
+  const categories = [
+    t('projects.categories.all'),
+    t('projects.categories.webDevelopment'),
+    t('projects.categories.dataAnalysis'),
+    t('projects.categories.openSource'),
+  ];
 
   const filteredProjects =
-    activeCategory === 'All'
+    activeCategory === t('projects.categories.all')
       ? projects
-      : projects.filter(project => project.category === activeCategory);
+      : projects.filter(project => {
+          const categoryMap: Record<string, string> = {
+            [t('projects.categories.webDevelopment')]: 'Web Development',
+            [t('projects.categories.dataAnalysis')]: 'Data Analysis',
+            [t('projects.categories.openSource')]: 'Open Source',
+          };
+          return project.category === categoryMap[activeCategory];
+        });
 
   return (
-    <section id='projects' className='py-10 relative overflow-hidden px-6'>
+    <section
+      id='projects'
+      className='py-10 relative overflow-hidden px-6'
+      key={forceRender}
+    >
       <div className='container mx-auto'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold mb-4 opacity-0 animate-fade-in animate-delay-100'>
-            Featured <span className='text-primary'>Work</span>
+            {t('projects.title')}{' '}
+            <span className='text-primary'>{t('projects.titleHighlight')}</span>
           </h2>
           <p className='text-secondary-foreground max-w-2xl mx-auto opacity-0 animate-fade-in animate-delay-200'>
-            Here are some of my recent projects and Open-Source contributions.
-            Each project was carefully crafted with attention to detail,
-            performance, and user experience.
+            {t('projects.description')}
           </p>
         </div>
 
@@ -199,7 +226,19 @@ export const ProjectsSection: React.FC = () => {
                     {project.title}
                   </h3>
                   <span className='px-2 py-1 text-xs rounded-full bg-primary/10'>
-                    {project.category}
+                    {(() => {
+                      const categoryTranslations: Record<string, string> = {
+                        'Web Development': t(
+                          'projects.categories.webDevelopment',
+                        ),
+                        'Data Analysis': t('projects.categories.dataAnalysis'),
+                        'Open Source': t('projects.categories.openSource'),
+                      };
+                      return (
+                        categoryTranslations[project.category] ||
+                        project.category
+                      );
+                    })()}
                   </span>
                 </div>
                 <p className='text-foreground mb-5'>{project.description}</p>
@@ -249,7 +288,7 @@ export const ProjectsSection: React.FC = () => {
             rel='noopener noreferrer'
             className='cosmic-button inline-flex items-center'
           >
-            Check My GitHub <ArrowRight className='ml-2 h-5 w-5' />
+            {t('projects.cta')} <ArrowRight className='ml-2 h-5 w-5' />
           </a>
         </div>
       </div>

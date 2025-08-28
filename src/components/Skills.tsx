@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useTranslation } from 'react-i18next';
 
 interface Skill {
   name: string;
@@ -9,13 +10,27 @@ interface Skill {
 }
 
 export const SkillsSection: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] =
     useState<string>('frameworks');
   const progressRef = useRef<HTMLDivElement>(null);
+  const [forceRender, setForceRender] = useState(0);
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+
+  // Force re-render when language changes
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      setForceRender(prev => prev + 1);
+    };
+
+    i18n.on('languageChanged', handleLanguageChange);
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+    };
+  }, [i18n]);
 
   const skills: Skill[] = [
     { name: 'HTML/CSS', level: 95, category: 'languages' },
@@ -45,10 +60,10 @@ export const SkillsSection: React.FC = () => {
   ];
 
   const categories = [
-    { id: 'languages', name: 'Languages' },
-    { id: 'frameworks', name: 'Frameworks' },
-    { id: 'databases', name: 'Databases' },
-    { id: 'tools', name: 'Tools & Others' },
+    { id: 'languages', name: t('skills.categories.languages') },
+    { id: 'frameworks', name: t('skills.categories.frameworks') },
+    { id: 'databases', name: t('skills.categories.databases') },
+    { id: 'tools', name: t('skills.categories.tools') },
   ];
 
   const filteredSkills = skills.filter(
@@ -59,16 +74,16 @@ export const SkillsSection: React.FC = () => {
     <section
       id='skills'
       className='py-10 relative overflow-hidden px-6 bg-tech-dark/50'
+      key={forceRender}
     >
       <div className='container mx-auto'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold mb-4 opacity-0 animate-fade-in animate-delay-100'>
-            My <span className='text-primary'>Projects</span>
+            {t('skills.title')}{' '}
+            <span className='text-primary'>{t('skills.titleHighlight')}</span>
           </h2>
           <p className='text-secondary-foreground max-w-2xl mx-auto opacity-0 animate-fade-in animate-delay-200'>
-            I've developed a diverse skill set across programming languages,
-            frameworks, databases, and creative tools. Here's a snapshot of my
-            technical capabilities.
+            {t('skills.description')}
           </p>
         </div>
 

@@ -2,8 +2,11 @@ import { StarBackground } from '@/components/StarBackground';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { useEffect } from 'react';
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 export const NotFound = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
     document.title = '404 Not Found - IgorJFS Portfolio';
   }, []);
@@ -16,18 +19,21 @@ export const NotFound = () => {
       <div className='z-10 space-y-6 px-6'>
         {/* Número 404 */}
         <h1 className='text-7xl md:text-9xl font-extrabold tracking-widest text-primary-gradient'>
-          404
+          {t('notFound.title')}
         </h1>
 
         {/* Mensagem */}
         <p className='text-lg md:text-2xl text-muted-foreground'>
-          Ops... Page Not Found D:
+          {t('notFound.message')}
         </p>
-        <p>No worries, you can always go back to the homepage.</p>
+        <p>{t('notFound.description')}</p>
 
         {/* Botão voltar */}
-        <Link to='/' className='inline-block cosmic-button mt-6'>
-          Back to Home
+        <Link
+          to={window.location.pathname.includes('/pt-br') ? '/pt-br' : '/'}
+          className='inline-block cosmic-button mt-6'
+        >
+          {t('notFound.cta')}
         </Link>
       </div>
     </div>

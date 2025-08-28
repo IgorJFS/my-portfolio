@@ -25,6 +25,7 @@ responsive, and accessible experience.
 - Skills section with filterable categories and progress bars
 - Projects showcase with images, tech stack, and links
 - Contact form with toast notifications powered by EmailJS
+- i18n to translate the website to Portuguese
 
 ## Getting Started
 

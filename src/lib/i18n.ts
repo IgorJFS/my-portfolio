@@ -189,7 +189,7 @@ const resources = {
         name: 'Igor',
         surname: 'Moraes',
         description:
-          'Um desenvolvedor de software motivado que cria sites bonitos e funcionais. Especializado em desenvolvimento web full-stack, construo aplicações web responsivas e performáticas.',
+          'Um desenvolvedor de software motivado que cria sites elegantes e funcionais. Especializado em desenvolvimento full-stack, construo aplicações web responsivas e performáticas.',
         cta: 'Ver Meu Trabalho',
         scroll: 'Rolar',
       },

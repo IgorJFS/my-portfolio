@@ -47,7 +47,8 @@ const resources = {
           },
           projectMgmt: {
             title: 'UI/UX Design',
-            description: 'Creating intuitive digital experiences.',
+            description:
+              'Creating intuitive and responsive digital experiences.',
           },
         },
       },
@@ -224,7 +225,8 @@ const resources = {
           },
           projectMgmt: {
             title: 'UI/UX Design',
-            description: 'Criando experiências digitais intuitivas.',
+            description:
+              'Criando experiências digitais intuitivas e responsivas.',
           },
         },
       },

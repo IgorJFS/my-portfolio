@@ -1,4 +1,4 @@
-import { Briefcase, Code, UserStar } from 'lucide-react';
+import { Code, MonitorSmartphone, UserStar } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 
@@ -73,7 +73,7 @@ export const AboutSection = () => {
             <div className='gradient-border p-6 card-hover'>
               <div className='flex items-start gap-4'>
                 <div className='p-3 rounded-full bg-primary/10'>
-                  <Briefcase className='h-6 w-6 text-primary' />
+                  <MonitorSmartphone className='h-6 w-6 text-primary' />
                 </div>
                 <div className='sm:text-left'>
                   <h4 className='font-semibold text-lg'>

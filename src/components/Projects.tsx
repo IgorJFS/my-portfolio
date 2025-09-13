@@ -145,9 +145,20 @@ export const ProjectsSection: React.FC = () => {
       description: t('projects.items.seraui.description'),
       image: '/sera.png',
       category: 'Open Source',
-      technologies: ['Markdown', 'Docs', 'GitHub'],
+      technologies: ['React', 'TypeScript', 'GitHub'],
       liveUrl: 'https://seraui.seraprogrammer.com/',
       githubUrl: 'https://github.com/seraui/seraui/pull/14#event-19064453564',
+    },
+    {
+      id: 13,
+      title: t('projects.items.heroUI.title'),
+      description: t('projects.items.heroUI.description'),
+      image: '/HeroUI.png',
+      category: 'Open Source',
+      technologies: ['React', 'Typescript', 'NextJS', 'GitHub'],
+      liveUrl: 'https://www.heroui.com/',
+      githubUrl:
+        'https://github.com/heroui-inc/heroui/pull/5584#event-19423995404',
     },
   ];
 

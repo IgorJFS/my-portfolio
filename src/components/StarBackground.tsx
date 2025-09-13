@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 type Star = {
   id: number;
@@ -21,23 +21,54 @@ type Meteor = {
 export const StarBackground = () => {
   const [stars, setStars] = useState<Star[]>([]);
   const [meteors, setMeteors] = useState<Meteor[]>([]);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    generateStars();
-    generateMeteors();
-
-    const handleResize = () => {
-      generateStars();
+    // Check initial theme
+    const checkTheme = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      setIsDarkMode(isDark);
     };
 
-    window.addEventListener("resize", handleResize);
+    checkTheme();
 
-    return () => window.removeEventListener("resize", handleResize);
+    // Only generate stars/meteors in dark mode
+    if (document.documentElement.classList.contains('dark')) {
+      generateStars();
+      generateMeteors();
+    }
+
+    const handleResize = () => {
+      if (document.documentElement.classList.contains('dark')) {
+        generateStars();
+      }
+    };
+
+    // Watch for theme changes
+    const observer = new MutationObserver(() => {
+      checkTheme();
+      if (document.documentElement.classList.contains('dark')) {
+        generateStars();
+        generateMeteors();
+      }
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      observer.disconnect();
+    };
   }, []);
 
   const generateStars = () => {
     const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 10000
+      (window.innerWidth * window.innerHeight) / 10000,
     );
 
     const newStars = [];
@@ -75,32 +106,34 @@ export const StarBackground = () => {
   };
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-      {stars.map((star) => (
+    <div
+      className={`fixed inset-0 overflow-hidden pointer-events-none z-0 ${isDarkMode ? 'block' : 'hidden'}`}
+    >
+      {stars.map(star => (
         <div
           key={star.id}
-          className="star animate-pulse-subtle"
+          className='star animate-pulse-subtle'
           style={{
-            width: star.size + "px",
-            height: star.size + "px",
-            left: star.x + "%",
-            top: star.y + "%",
+            width: star.size + 'px',
+            height: star.size + 'px',
+            left: star.x + '%',
+            top: star.y + '%',
             opacity: star.opacity,
-            animationDuration: star.animationDuration + "s",
+            animationDuration: star.animationDuration + 's',
           }}
         />
       ))}
 
-      {meteors.map((meteor) => (
+      {meteors.map(meteor => (
         <div
           key={meteor.id}
-          className="meteor animate-meteor"
+          className='meteor animate-meteor'
           style={{
-            width: meteor.size * 50 + "px",
-            height: meteor.size * 2 + "px",
-            left: meteor.x + "%",
-            top: meteor.y + "%",
-            animationDuration: meteor.animationDuration + "s",
+            width: meteor.size * 50 + 'px',
+            height: meteor.size * 2 + 'px',
+            left: meteor.x + '%',
+            top: meteor.y + '%',
+            animationDuration: meteor.animationDuration + 's',
           }}
         />
       ))}

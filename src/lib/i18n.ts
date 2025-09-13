@@ -129,6 +129,11 @@ const resources = {
             description:
               'Identified and resolved various bugs within the Sera UI React library, improving overall usability.',
           },
+          heroUI: {
+            title: 'Refactoring for HeroUI React Library',
+            description:
+              'Contributed to HeroUI, a React UI library used by 73,000+ developers, by refactoring a piece of the React logic to fix a visual bug and improve interface consistency.',
+          },
         },
       },
       // Contact Section
@@ -306,6 +311,11 @@ const resources = {
             title: 'Correções de Bugs para Biblioteca React Sera UI',
             description:
               'Identifiquei e resolvi vários bugs na biblioteca React Sera UI, melhorando a usabilidade geral.',
+          },
+          heroUI: {
+            title: 'Refatoração para Biblioteca React HeroUI',
+            description:
+              'Contribuí para o HeroUI, uma biblioteca UI React usada por mais de 73.000 desenvolvedores, refatorando uma parte da lógica React para corrigir um bug visual e melhorar a consistência da interface.',
           },
         },
       },

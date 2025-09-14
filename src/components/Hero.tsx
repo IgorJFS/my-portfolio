@@ -38,6 +38,15 @@ export const HeroSection = () => {
               {' '}
               {t('hero.surname')}
             </span>
+            <br />
+            <span className='md:text-7xl text-primary ml-1 opacity-0 animate-fade-in-delay-2'>
+              {' '}
+              {t('hero.stack')}
+            </span>
+            <span className='md:text-7xl ml-1 opacity-0 animate-fade-in-delay-2'>
+              {' '}
+              {t('hero.specialty')}
+            </span>
           </h1>
           <p className='text-lg md:text-xl text-foreground opacity-0 mx-auto animate-fade-in-delay-3'>
             {t('hero.description')}

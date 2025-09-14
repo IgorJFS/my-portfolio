@@ -10,6 +10,8 @@ const resources = {
         greeting: "Hi, I'm",
         name: 'Igor',
         surname: 'Moraes',
+        stack: 'Full-Stack',
+        specialty: 'Developer',
         description:
           'A motivated Software developer that creates beautiful and functional websites. Specializing in full-stack web development, I build responsive and performant web applications.',
         cta: 'View My Work',
@@ -193,6 +195,8 @@ const resources = {
         greeting: 'Olá, eu sou o',
         name: 'Igor',
         surname: 'Moraes',
+        specialty: 'Developer',
+        stack: 'Full-Stack',
         description:
           'Um desenvolvedor de software motivado que cria sites elegantes e funcionais. Especializado em desenvolvimento full-stack, construo aplicações web responsivas e performáticas.',
         cta: 'Ver Meu Trabalho',

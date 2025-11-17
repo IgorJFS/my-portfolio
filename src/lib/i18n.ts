@@ -10,10 +10,10 @@ const resources = {
         greeting: "Hi, I'm",
         name: 'Igor',
         surname: 'Moraes',
-        stack: 'Front-End',
+        stack: 'Full-Stack',
         specialty: 'Developer',
         description:
-          'A motivated Software developer that creates beautiful and functional websites. Specializing in front-end web development, I build responsive and performant web applications.',
+          'A motivated Software developer that creates beautiful and functional websites. Specializing in full-stack web development, I build responsive and performant web applications.',
         cta: 'View My Work',
         scroll: 'Scroll',
       },
@@ -33,7 +33,7 @@ const resources = {
         description1:
           'I am a committed Software developer with experience in building modern web applications. My journey in web development started with a curiosity to understand how games and websites work, and it has evolved into a full-fledged career.',
         description2:
-          'I specialize in front-end development, working with technologies like React, Typescript, Node.js, and various databases. I enjoy creating responsive, user-friendly, and performant web applications that solve real-world problems. And I also love to contribute to open-source projects and collaborate with other developers.',
+          'I specialize in full-stack development, working with technologies like React, Typescript, Node.js, and various databases. I enjoy creating responsive, user-friendly, and performant web applications that solve real-world problems. And I also love to contribute to open-source projects and collaborate with other developers.',
         cta1: 'Get In Touch',
         cta2: 'Download Resume',
         cards: {
@@ -196,9 +196,9 @@ const resources = {
         name: 'Igor',
         surname: 'Moraes',
         specialty: 'Developer',
-        stack: 'Front-End',
+        stack: 'Full-Stack',
         description:
-          'Um desenvolvedor de software motivado que cria sites elegantes e funcionais. Especializado em desenvolvimento front-end, construo aplicações web responsivas e performáticas.',
+          'Um desenvolvedor de software motivado que cria sites elegantes e funcionais. Especializado em desenvolvimento full-stack, construo aplicações web responsivas e performáticas.',
         cta: 'Ver Meu Trabalho',
         scroll: 'Rolar',
       },
@@ -218,7 +218,7 @@ const resources = {
         description1:
           'Sou um desenvolvedor de software comprometido com experiência na construção de aplicações web modernas. Minha jornada no desenvolvimento web começou com a curiosidade de entender como jogos e sites funcionam, e evoluiu para uma carreira completa.',
         description2:
-          'Sou especializado em desenvolvimento front-end, trabalhando com tecnologias como React, Typescript, Node.js e vários bancos de dados. Gosto de criar aplicações web responsivas, amigáveis ao usuário e performáticas que resolvem problemas do mundo real. E também amo contribuir para projetos open-source e colaborar com outros desenvolvedores.',
+          'Sou especializado em desenvolvimento full-stack, trabalhando com tecnologias como React, Typescript, Node.js e vários bancos de dados. Gosto de criar aplicações web responsivas, amigáveis ao usuário e performáticas que resolvem problemas do mundo real. E também amo contribuir para projetos open-source e colaborar com outros desenvolvedores.',
         cta1: 'Entre em Contato',
         cta2: 'Baixar Currículo',
         cards: {

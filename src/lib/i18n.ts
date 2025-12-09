@@ -36,6 +36,7 @@ const resources = {
           'I specialize in full-stack development, working with technologies like React, Typescript, Node.js, and various databases. I enjoy creating responsive, user-friendly, and performant web applications that solve real-world problems. And I also love to contribute to open-source projects and collaborate with other developers.',
         cta1: 'Get In Touch',
         cta2: 'Download Resume',
+        resumeFile: '/IgorCV-FS.pdf',
         cards: {
           webDev: {
             title: 'Web Development',
@@ -194,11 +195,11 @@ const resources = {
       hero: {
         greeting: 'Olá, eu sou o',
         name: 'Igor',
-        surname: 'Moraes',
-        specialty: 'Developer',
-        stack: 'Full-Stack',
+        surname: '',
+        specialty: 'Web',
+        stack: 'Desenvolvedor',
         description:
-          'Um desenvolvedor de software motivado que cria sites elegantes e funcionais. Especializado em desenvolvimento full-stack, construo aplicações web responsivas e performáticas.',
+          'Um desenvolvedor de software motivado que cria softwares funcionais e performáticos. Especializado em desenvolvimento full-stack, construo aplicações web responsivas.',
         cta: 'Ver Meu Trabalho',
         scroll: 'Rolar',
       },
@@ -221,6 +222,7 @@ const resources = {
           'Sou especializado em desenvolvimento full-stack, trabalhando com tecnologias como React, Typescript, Node.js e vários bancos de dados. Gosto de criar aplicações web responsivas, amigáveis ao usuário e performáticas que resolvem problemas do mundo real. E também amo contribuir para projetos open-source e colaborar com outros desenvolvedores.',
         cta1: 'Entre em Contato',
         cta2: 'Baixar Currículo',
+        resumeFile: '/IgorFullStackCur.pdf',
         cards: {
           webDev: {
             title: 'Desenvolvimento Web',
@@ -228,7 +230,7 @@ const resources = {
               'Criando sites responsivos e aplicações web usando frameworks modernos',
           },
           openSource: {
-            title: 'Código Aberto',
+            title: 'Open Source',
             description:
               'Contribuindo para projetos open-source e colaborando com outros desenvolvedores',
           },

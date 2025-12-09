@@ -35,7 +35,7 @@ export const AboutSection = () => {
                 {t('about.cta1')}
               </a>
               <a
-                href='/IgorCV-FS.pdf'
+                href={t('about.resumeFile')}
                 download
                 className='rounded-full px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-background transition-colors text-center'
               >

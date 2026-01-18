@@ -9,8 +9,7 @@ const resources = {
       hero: {
         greeting: "Hi, I'm",
         name: 'Igor',
-        surname: 'Moraes',
-        stack: 'Full-Stack',
+        stack: 'Frontend',
         specialty: 'Developer',
         description:
           'A motivated Software developer that creates beautiful and functional websites. Specializing in full-stack web development, I build responsive and performant web applications.',
@@ -36,7 +35,7 @@ const resources = {
           'I specialize in full-stack development, working with technologies like React, Typescript, Node.js, and various databases. I enjoy creating responsive, user-friendly, and performant web applications that solve real-world problems. And I also love to contribute to open-source projects and collaborate with other developers.',
         cta1: 'Get In Touch',
         cta2: 'Download Resume',
-        resumeFile: '/IgorCV-FS.pdf',
+        resumeFile: '/Igor-Moraes-Resume-Frontend.pdf',
         cards: {
           webDev: {
             title: 'Web Development',
@@ -183,7 +182,7 @@ const resources = {
       // 404 Page
       notFound: {
         title: '404',
-        message: 'Ops... Page Not Found D:',
+        message: 'Ops... Page Not Found!',
         description: 'No worries, you can always go back to the homepage.',
         cta: 'Back to Home',
       },
@@ -193,10 +192,9 @@ const resources = {
     translation: {
       // Hero Section
       hero: {
-        greeting: 'Olá, eu sou o',
+        greeting: 'Olá, meu nome é',
         name: 'Igor',
-        surname: '',
-        specialty: 'Web',
+        specialty: 'Frontend',
         stack: 'Desenvolvedor',
         description:
           'Um desenvolvedor de software motivado que cria softwares funcionais e performáticos. Especializado em desenvolvimento full-stack, construo aplicações web responsivas.',
@@ -222,7 +220,7 @@ const resources = {
           'Sou especializado em desenvolvimento full-stack, trabalhando com tecnologias como React, Typescript, Node.js e vários bancos de dados. Gosto de criar aplicações web responsivas, amigáveis ao usuário e performáticas que resolvem problemas do mundo real. E também amo contribuir para projetos open-source e colaborar com outros desenvolvedores.',
         cta1: 'Entre em Contato',
         cta2: 'Baixar Currículo',
-        resumeFile: '/IgorFullStackCur.pdf',
+        resumeFile: '/Igor-Moraes-Curriculo-Frontend.pdf',
         cards: {
           webDev: {
             title: 'Desenvolvimento Web',
@@ -369,7 +367,7 @@ const resources = {
       // 404 Page
       notFound: {
         title: '404',
-        message: 'Ops... Página Não Encontrada D:',
+        message: 'Ops... Página Não Encontrada!',
         description:
           'Não se preocupe, você sempre pode voltar para a página inicial.',
         cta: 'Voltar ao Início',

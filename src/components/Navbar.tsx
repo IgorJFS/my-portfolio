@@ -14,7 +14,7 @@ const navItemsPT = [
   { name: 'Início', href: '#hero' },
   { name: 'Sobre', href: '#about' },
   { name: 'Habilidades', href: '#skills' },
-  { name: 'Projetos', href: '#projects' },
+  { name: 'Experiência & Projetos', href: '#projects' },
   { name: 'Contato', href: '#contact' },
 ];
 

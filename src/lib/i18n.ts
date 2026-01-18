@@ -9,6 +9,7 @@ const resources = {
       hero: {
         greeting: "Hi, I'm",
         name: 'Igor',
+        surname: "",
         stack: 'Frontend',
         specialty: 'Developer',
         description:

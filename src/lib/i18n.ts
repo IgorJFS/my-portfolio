@@ -10,7 +10,7 @@ const resources = {
         greeting: "Hi, I'm",
         name: 'Igor',
         surname: "",
-        stack: 'Frontend',
+        stack: 'FullStack',
         specialty: 'Developer',
         description:
           'A motivated Software developer that creates beautiful and functional websites. Specializing in full-stack web development, I build responsive and performant web applications.',
@@ -195,7 +195,7 @@ const resources = {
       hero: {
         greeting: 'Olá, meu nome é',
         name: 'Igor',
-        specialty: 'Frontend',
+        specialty: 'Full Stack',
         stack: 'Desenvolvedor',
         description:
           'Um desenvolvedor de software motivado que cria softwares funcionais e performáticos. Especializado em desenvolvimento full-stack, construo aplicações web responsivas.',
@@ -221,7 +221,7 @@ const resources = {
           'Sou especializado em desenvolvimento full-stack, trabalhando com tecnologias como React, Typescript, Node.js e vários bancos de dados. Gosto de criar aplicações web responsivas, amigáveis ao usuário e performáticas que resolvem problemas do mundo real. E também amo contribuir para projetos open-source e colaborar com outros desenvolvedores.',
         cta1: 'Entre em Contato',
         cta2: 'Baixar Currículo',
-        resumeFile: '/Igor-Moraes-Curriculo-Frontend.pdf',
+        resumeFile: '/Igor_Moraes_CV_Fullstack.pdf',
         cards: {
           webDev: {
             title: 'Desenvolvimento Web',
